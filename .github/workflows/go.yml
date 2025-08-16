@@ -39,4 +39,9 @@ jobs:
             go install golang.org/x/lint/golint@latest
             golint -set_exit_status $files
           fi
-      - run: go test ./...
+      - name: Run tests with coverage
+        run: go test ./... -coverprofile=coverage.out
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        with:
+          files: coverage.out
