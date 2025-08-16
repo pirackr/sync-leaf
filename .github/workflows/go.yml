@@ -38,7 +38,8 @@ jobs:
           if [ -n "$files" ]; then
             go install golang.org/x/lint/golint@latest
             golint -set_exit_status $files
-          fi      - name: Go vet
+          fi
+      - name: Go vet
         run: go vet ./...
       - name: Staticcheck
         run: |
