@@ -39,4 +39,10 @@ jobs:
             go install golang.org/x/lint/golint@latest
             golint -set_exit_status $files
           fi
+      - name: Go vet
+        run: go vet ./...
+      - name: Staticcheck
+        run: |
+          go install honnef.co/go/tools/cmd/staticcheck@latest
+          staticcheck ./...
       - run: go test ./...
