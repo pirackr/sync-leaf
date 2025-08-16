@@ -46,4 +46,4 @@ jobs:
           go install honnef.co/go/tools/cmd/staticcheck@latest
           staticcheck ./...
       - name: Go test coverage
-        uses: vladopajic/go-test-coverage@v2
+        uses: actions/go-test-coverage@v1
