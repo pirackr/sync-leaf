@@ -6,8 +6,7 @@ This repository follows a minimal example of the standard Go project layout.
 
 ## Layout
 
-- `cmd/greeter`: application entry point printing a greeting
-- `pkg/greetings`: library code with the `Hello` function and tests
+This project is under active development; modules will be added as the project evolves.
 
 ## Testing
 
