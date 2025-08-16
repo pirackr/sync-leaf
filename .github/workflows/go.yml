@@ -38,7 +38,13 @@ jobs:
           if [ -n "$files" ]; then
             go install golang.org/x/lint/golint@latest
             golint -set_exit_status $files
-          fi
+          fi      - name: Go vet
+        run: go vet ./...
+      - name: Staticcheck
+        run: |
+          go install honnef.co/go/tools/cmd/staticcheck@latest
+          staticcheck ./...
+      - run: go test ./...
       - name: Run tests with coverage
         run: go test ./... -coverprofile=coverage.out
       - name: Upload coverage
