@@ -48,4 +48,5 @@ jobs:
       - name: Go test coverage
         uses: vladopajic/go-test-coverage@v2
         with:
+          run-command: go test -coverprofile=coverage.out ./...
           profile: coverage.out
